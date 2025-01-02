@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Primbon Jodoh</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-4">Tes Kecocokan Jodoh Berdasarkan Weton</h1>
+
+    <!-- Form -->
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+      <form id="testForm" class="space-y-4">
+        <div>
+          <label for="hari1" class="block text-gray-700 font-semibold">Hari Lahir Pasangan 1</label>
+          <select id="hari1" class="w-full border-gray-300 rounded-lg shadow-sm">
+            <option value="5">Minggu</option>
+            <option value="4">Senin</option>
+            <option value="3">Selasa</option>
+            <option value="7">Rabu</option>
+            <option value="8">Kamis</option>
+            <option value="6">Jumat</option>
+            <option value="9">Sabtu</option>
+          </select>
+        </div>
+        <div>
+          <label for="hari2" class="block text-gray-700 font-semibold">Hari Lahir Pasangan 2</label>
+          <select id="hari2" class="w-full border-gray-300 rounded-lg shadow-sm">
+            <option value="5">Minggu</option>
+            <option value="4">Senin</option>
+            <option value="3">Selasa</option>
+            <option value="7">Rabu</option>
+            <option value="8">Kamis</option>
+            <option value="6">Jumat</option>
+            <option value="9">Sabtu</option>
+          </select>
+        </div>
+        <button type="button" onclick="calculate()" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow hover:bg-blue-600">
+          Hitung Kecocokan
+        </button>
+      </form>
+    </div>
+
+    <!-- Result -->
+    <div id="result" class="mt-8 p-6 bg-white rounded-lg shadow-lg hidden">
+      <h2 class="text-xl font-bold text-gray-800">Hasil Test Kecocokan</h2>
+      <p id="resultText" class="text-gray-700 mt-4"></p>
+      <p class="text-sm text-gray-500 mt-4">
+        <strong>Catatan:</strong> Makna ini hanyalah simbolisme dalam primbon dan lebih bertujuan memberikan panduan untuk introspeksi. Harmoni hubungan sebenarnya tetap tergantung pada usaha dan komunikasi kedua pihak.
+      </p>
+      <button onclick="downloadResult()" class="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow hover:bg-green-600">
+        Download Hasil
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
