@@ -31,7 +31,15 @@
       border-color: #4a5568;
     }
     .green-gradient {
-      background: linear-gradient(135deg, #48bb78, #38a169);
+      background: linear-gradient(135deg, #2f855a, #276749);
+      color: white;
+    }
+    .green-gradient select {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+    .green-gradient select option {
+      background-color: #2f855a;
       color: white;
     }
   </style>
@@ -45,7 +53,7 @@
       <form id="testForm" class="space-y-4">
         <div>
           <label for="hari1" class="block font-semibold">Hari Lahir Pasangan 1</label>
-          <select id="hari1" class="w-full border rounded-lg shadow-sm p-2 bg-white bg-opacity-20 text-white">
+          <select id="hari1" class="w-full border rounded-lg shadow-sm p-2">
             <option value="5">Minggu</option>
             <option value="4">Senin</option>
             <option value="3">Selasa</option>
@@ -57,7 +65,7 @@
         </div>
         <div>
           <label for="hari2" class="block font-semibold">Hari Lahir Pasangan 2</label>
-          <select id="hari2" class="w-full border rounded-lg shadow-sm p-2 bg-white bg-opacity-20 text-white">
+          <select id="hari2" class="w-full border rounded-lg shadow-sm p-2">
             <option value="5">Minggu</option>
             <option value="4">Senin</option>
             <option value="3">Selasa</option>
@@ -80,39 +88,13 @@
       <p class="text-sm mt-4">
         <strong>Catatan:</strong> Makna ini hanyalah simbolisme dalam primbon dan lebih bertujuan memberikan panduan untuk introspeksi. Harmoni hubungan sebenarnya tetap tergantung pada usaha dan komunikasi kedua pihak.
       </p>
-      <button onclick="downloadResult()" class="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow hover:bg-green-600 w-full">
+      <button onclick="downloadResult()" class="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow hover:bg-green-700 w-full">
         Download Hasil
       </button>
     </div>
   </div>
 
-  <script>
-    function calculate() {
-      const hari1 = parseInt(document.getElementById('hari1').value);
-      const hari2 = parseInt(document.getElementById('hari2').value);
-      const total = hari1 + hari2;
-      let resultText = '';
-
-      if (total % 2 === 0) {
-        resultText = 'Kecocokan: Sangat Baik. Pasangan ini memiliki potensi harmonis dan saling melengkapi.';
-      } else {
-        resultText = 'Kecocokan: Cukup Baik. Pasangan ini perlu lebih banyak usaha dan komunikasi untuk mencapai harmoni.';
-      }
-
-      document.getElementById('resultText').innerText = resultText;
-      document.getElementById('result').classList.remove('hidden');
-    }
-
-    function downloadResult() {
-      const resultText = document.getElementById('resultText').innerText;
-      const blob = new Blob([resultText], { type: 'text/plain' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'hasil_kecocokan.txt';
-      a.click();
-      URL.revokeObjectURL(url);
-    }
-  </script>
+  <!-- Skrip JavaScript Terpisah -->
+  <script src="script.js"></script>
 </body>
 </html>
